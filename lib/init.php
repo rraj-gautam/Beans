@@ -123,6 +123,11 @@ function beans_add_theme_support() {
 		)
 	);
 
+	if ( in_array( beans_get_layout(), array( 'c', 'sp_c_ss' ), true ) ) {
+		add_theme_support( 'align-wide' );
+	}
+	add_theme_support( 'wp-block-styles' );
+
 	// Beans specific.
 	add_theme_support( 'offcanvas-menu' );
 	add_theme_support( 'beans-default-styling' );
