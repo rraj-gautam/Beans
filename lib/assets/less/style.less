@@ -233,3 +233,47 @@ article header > .tm-article-image:first-child {
 	color: #333;
 	outline: 1px #ccc solid;
 }
+
+/* Gutenberg
+ ========================================================================== */
+
+
+//--
+//  Blocks wp-block-cover
+
+.wp-block-cover.alignfull{
+
+  margin-left: ~"calc(-@{grid-gutter-horizontal} + -@{panel-box-padding})";
+  width:100vw;
+  max-width: 100vw;
+
+  .wp-block-cover-text{
+	max-width: 100%;
+  }
+
+  @media (min-width: @breakpoint-medium) {
+	margin-left: ~"calc(-@{grid-gutter-horizontal} + -@{panel-box-padding})";
+  }
+
+  @media (min-width: @breakpoint-large) {
+	margin-left: ~"calc(-@{grid-gutter-horizontal} + -@{panel-box-padding})";
+  }
+
+  @media (min-width: @breakpoint-xlarge) {
+	margin-left: ~"calc(-@{grid-gutter-large-horizontal} + -@{panel-box-padding})";
+  }
+}
+
+.uk-container-center{
+  .wp-block-cover.alignfull{
+	margin-left: ~"calc(50% - 50vw)";
+	margin-right: ~"calc(50% - 50vw)";
+	width: 100vw;
+	max-width: 100vw;
+  }
+}
+
+
+
+
+
