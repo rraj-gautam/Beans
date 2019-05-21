@@ -274,6 +274,38 @@ article header > .tm-article-image:first-child {
 }
 
 
+// --
+// Drop Cap.
+
+  p.has-drop-cap:not(:focus)::first-letter {
+	font-size: 3.375em;
+	line-height: 1;
+	font-weight: 700;
+	margin: 0 .25em 0 0;
+  }
+
+// Font Size Support.
+.has-small-font-size {
+  font-size:~"calc(0.75 * @global-font-size)";
+  line-height:~"calc(0.75*@{global-line-height})";
+}
+.has-regular-font-size {
+  font-size: @global-font-size;
+}
+.has-large-font-size {
+  font-size:~"calc(1.25*@{global-font-size})";
+  line-height:~"calc(1.25*@{global-line-height})";
+}
+
+.has-larger-font-size {
+  font-size:~"calc(1.5*@{global-font-size})";
+  line-height:~"calc(1.5*@{global-line-height})";
+}
+.has-huge-font-size {
+  font-size:~"calc(2*@{global-font-size})";
+  line-height:~"calc(2*@{global-line-height})";
+}
+
 
 
 
