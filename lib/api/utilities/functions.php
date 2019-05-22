@@ -708,3 +708,34 @@ function _beans_doing_ajax() {
 function _beans_doing_autosave() {
 	return defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE;
 }
+
+/**
+ * Locate and require a configuration file.
+ *
+ * First, search child theme for the configuration file in the config folder.
+ * Should file doesn't exist or empty in the child, search the parent for the config file.
+ *
+ * @since 1.5.2
+ *
+ * @param string $configuration_filename The configuration file to locate  (not including ".php" file extension).
+ * @return array The configuration data.
+ */
+function beans_get_config( $configuration_filename ) {
+
+	$child_file = get_stylesheet_directory() . '/config/' . $configuration_filename . '.php';
+
+	if ( is_readable( $child_file ) ) {
+		$data = array();
+		$data = require $child_file;
+		if ( empty( $data ) ) {
+			return (array) $data;
+		}
+	}
+
+	$parent_file = get_template_directory() . '/config/' . $configuration_filename . '.php';
+	if ( empty( $data ) && is_readable( $parent_file ) ) {
+		return (array) require $parent_file;
+	}
+
+	return (array) $data;
+}

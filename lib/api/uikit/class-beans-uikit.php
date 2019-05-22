@@ -70,10 +70,11 @@ final class _Beans_Uikit {
 		 * Filter UIkit style compiler arguments.
 		 *
 		 * @since 1.0.0
+		 * @since 1.6.0 Added wp-block-library as a dependency.
 		 *
 		 * @param array $components An array of UIkit style compiler arguments.
 		 */
-		$args = apply_filters( 'beans_uikit_euqueued_styles_args', array() );
+		$args = apply_filters( 'beans_uikit_euqueued_styles_args', array( 'dependencies' => array( 'wp-block-library' ) ) );
 
 		beans_compile_less_fragments( 'uikit', array_unique( $styles ), $args );
 	}
