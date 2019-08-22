@@ -43,16 +43,14 @@ beans_add_smart_action( 'after_setup_theme', 'beans_do_register_nav_menus' );
 /**
  * Register nav menus.
  *
+ * @since 1.6.0 - Add support for config in child theme.
  * @since 1.0.0
  *
  * @return void
  */
 function beans_do_register_nav_menus() {
-	register_nav_menus(
-		array(
-			'primary' => __( 'Primary Menu', 'tm-beans' ),
-		)
-	);
+	$menu = beans_get_config( 'menu' );
+	register_nav_menus( $menu );
 }
 
 // Filter.

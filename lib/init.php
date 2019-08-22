@@ -123,6 +123,19 @@ function beans_add_theme_support() {
 		)
 	);
 
+	// Gutenberg Specific.
+	add_theme_support( 'wp-block-styles' );
+	add_theme_support( 'align-wide' );
+	add_theme_support( 'editor-styles' );
+
+	// Enqueue editor styles.
+	if ( is_admin() ) {
+		$block_editor_settings = beans_get_config( 'block-editor-settings' );
+		foreach ( $block_editor_settings as $key => $value ) {
+			add_theme_support( $key, $value );
+		}
+	}
+
 	// Beans specific.
 	add_theme_support( 'offcanvas-menu' );
 	add_theme_support( 'beans-default-styling' );

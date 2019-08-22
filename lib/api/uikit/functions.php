@@ -268,6 +268,7 @@ function _beans_uikit_get_registered_theme( $id ) {
 	return beans_get( $id, $_beans_uikit_registered_items['themes'], false );
 }
 
+add_action( 'enqueue_block_editor_assets', '_beans_uikit_enqueue_assets' );
 add_action( 'wp_enqueue_scripts', '_beans_uikit_enqueue_assets', 7 );
 /**
  * Enqueue UIkit assets.

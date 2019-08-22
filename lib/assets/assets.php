@@ -54,6 +54,10 @@ function beans_enqueue_uikit_components() {
 	// Add the theme style as a UIkit fragment to have access to all the variables.
 	beans_compiler_add_fragment( 'uikit', BEANS_ASSETS_PATH . 'less/style.less', 'less' );
 
+	// Add the Gutenberg Styles.
+	beans_compiler_add_fragment( 'uikit', BEANS_ASSETS_PATH . 'less/gutenberg/color-pallet.less', 'less' );
+	beans_compiler_add_fragment( 'uikit', BEANS_ASSETS_PATH . 'less/gutenberg/font-sizes.less', 'less' );
+
 	// Add the theme default style as a UIkit fragment only if the theme supports it.
 	if ( current_theme_supports( 'beans-default-styling' ) ) {
 		beans_compiler_add_fragment( 'uikit', BEANS_ASSETS_PATH . 'less/default.less', 'less' );
